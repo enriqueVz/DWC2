@@ -1,0 +1,63 @@
+[
+    {
+      "tamaño": "Pequeña",
+       "precio": "5 Euros",
+       "dimension": "15x15cm"
+    },
+    {
+        "tamaño": "Mediana",
+        "precio": "10 Euros",
+        "dimension": "20x20cm"
+      
+    },
+    {
+        "tamaño": "Grande",
+        "precio": "15 Euros",
+        "dimension": "30x30cm"
+       },
+    
+       {
+       
+        "ingrediente": "Queso"
+       },
+
+       {
+        "ingrediente": "Jamón"
+       },
+
+       {
+        "ingrediente": "champiñones"
+       },
+
+       {
+        "ingrediente": "aceitunas"
+       },
+
+       {
+        "ingrediente": "cebolla"
+       },
+
+
+
+
+
+       {
+        "campo": "nombre"
+       },
+
+       {
+       "campo": "apellidos"       
+    },
+
+       {
+       "campo": "DNI"       
+    },
+
+       {
+       "campo": "Teléfono"
+       },
+
+       {
+       "campo": "correo"
+       }
+  ]
