@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo AJAX JSON</title>
+    <link rel="stylesheet" href="archivocss.css">
+    <script src="archivojs.js"></script>
+</head>
+    <body>
+        <h2>Pedido de Pizza</h2>
+        <form id="pizzaForm">
+            <p>Datos personales</p>
+            <!--Creamos una tabla para tener mejor ordenados los datos personales-->
+            <!--Cada celda de la tabla contiene un label o un input-->
+            <table>
+                <tr>
+                    <td><label for="nombre">Nombre y apellido:</label></td>
+                    <td><input type="text" id="nombre" placeholder="Nombre" required></td>
+                    <td><input type="text" id="apellido" placeholder="Apellido" required></td>
+                </tr>
+                <tr>
+                    <td><label for="direccion">Dirección:</label></td>
+                    <td colspan="2"><input type="text" id="direccion" placeholder="Introduce calle y portal" size=45 required></td>
+                </tr>
+                <tr>
+                    <td><label for="telefono">Teléfono:</label></td>
+                    <td colspan="2"><input type="text" id="telefono" placeholder="Introduce tu número" size="45" required></td>
+                </tr>
+                <tr>
+                    <td><label for="dircorele">Correo electrónico:</label></td>
+                    <td colspan="2"><input type="email" id="dircorele" placeholder="Introduce tu email" size="45" required></td>
+                </tr>
+            </table>
+            <!--Tabla con 3 input-label, uno para cada tamaño de pizza-->
+            <p>Tamaño<p>
+            <table>
+                <tr>
+                    <td><input type="radio" id="radio1" class="pizza" name="tamano"></td>
+                    <td><label for="radio1">Pequeña</label></td>
+                    <td>5 €</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="radio2" class="pizza" name="tamano"></td>
+                    <td><label for="radio2">Mediana</label></td>
+                    <td>10 €</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="radio3" class="pizza" name="tamano"></td>
+                    <td><label for="radio3">Grande</label></td>
+                    <td>15 €</td>
+                </tr>
+            </table>
+            <!--Div con cuatro checkbox, un checkbox para cada ingrediente extra-->
+            <p>Extras (elegir al menos uno)</p>
+            <table>
+                <tr>
+                    <td><input type="checkbox" id="checkbox1" name="ingredientesExtras"></td>
+                    <td><label for="checkbox1">Queso</label></td>
+                    <td>+1,10 €</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox2" name="ingredientesExtras"></td>
+                    <td><label for="checkbox2">Jamón York</label></td>
+                    <td>+1,20 €</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox3" name="ingredientesExtras"></td>
+                    <td><label for="checkbox3">Champiñones</label></td>
+                    <td>+0,90 €</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox4" name="ingredientesExtras"></td>
+                    <td><label for="checkbox4">Aceitunas negras</label></td>
+                    <td>+1,00 €</td>
+                </tr>
+            </table>
+            <br>
+            <!--Creo una tabla para tener mejor ordenados el botón de conexión y algunas funciones-->
+            <table>
+                <tr>
+                    <td><button id="but1">Establecer conexión con servidor</button></td>
+                    <td><button id="but2">Datos de todos los tamaños</button></td>
+                    <td><button id="but3">Datos del tamaño seleccionado</button></td>
+                </tr>
+                <tr>
+            </table>
+            <div id="div1"><!--Div1 a la espera.--></div>
+            <div id="divModal1" class="modal" style="display: none;">
+                <div id="divModalContent1" class="modal-content">
+                    <h2>Ventana modal</h2>
+                </div>
+            </div>
+            <div id="divModal2" class="modal" style="display: none;">
+                <div id="divModalContent2" class="modal-content">
+                    <h2>Ventana modal</h2>
+                </div>
+            </div>
+            <br>
+            <!--Div con la cantidad de pizzas de ese tamaño y esos ingredientes extra que se van a pedir-->
+            <div>
+                <label for="num1">Cantidad</label>
+                <input type="number" id="inputnumber1" min=1 max=5 value=1>
+            </div>
+            <br>
+            <div>
+                <button type="button" id="but4">Procesar el pedido</button>
+                <input type="reset" value="Limpiar formulario">
+            </div>
+        </form>
+        <!--Div que va a contener el precio del pedido, en principio está oculto-->
+        <div id="div4" style="display: none;"></div>
+            <h2>Precio Total del Pedido:</h2>
+            <p id="parrafoprecio"></p>
+        </div>
+   </body>
+</html>
