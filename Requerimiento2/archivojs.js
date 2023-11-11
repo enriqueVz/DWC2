@@ -68,6 +68,8 @@ function procesarRespuesta(jsonDoc) {
 
 //Función que hace visible una ventana modal con los datos de todos los tamaños de pizza
 function datosTodosTamanos() {
+    //Hacemos que aparezca la ventana modal
+    divModal1.style.display = "block";
     var tabla1 = "<table><tr><th>Nombre</th><th>Precio (€)</th><th>Diámetro (cm)</th></tr>";
     for (let tamano of arrayTamanos) {
         tabla1 += "<tr><td>"+tamano["@id"]+"</td>"+
@@ -76,14 +78,13 @@ function datosTodosTamanos() {
         "</tr>";
     }
     tabla1 += "</table>"
-    //Hacemos que aparezca la ventana modal
-    divModal1.style.display = "block";
     //Insertamos en su hijo divModalContent1 la tabla
     divModalContent1.innerHTML = tabla1;
 }
 
 //Función que hace visible una ventana modal con los datos del tamaño de pizza seleccionado
 function datosTamano(nombretamano) {
+    divModal2.style.display = "block";
     var tabla1 = "<table><tr><th>Nombre</th><th>Precio (€)</th><th>Diámetro (cm)</th></tr>";
     for (let tamano of arrayTamanos) {
         if (tamano["@id"] == nombretamano) {
@@ -94,11 +95,10 @@ function datosTamano(nombretamano) {
             "</tr>";
             tabla1 += "</table>"
             //return div3.innerHTML = tabla1;
-            divModal2.style.display = "block";
             divModalContent2.innerHTML = tabla1;
         }
     }
-    return div3.innerHTML = "No ha seleccionado ningún tamaño";
+    divModalContent2.innerHTML = "No ha seleccionado ningún tamaño.";
 }
 
 //Función que calcula el precio de la pizza, teniendo en cuenta tamaño, ingredientes extra y número de pizzas iguales pedidas
