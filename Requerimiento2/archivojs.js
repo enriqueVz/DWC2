@@ -36,13 +36,11 @@ function arrayDeStringDeLosLabelDeLosCheckboxSeleccionados() {
 }
 
 //------------------------------------Funciones que involucra a .json------------------------------------------
-const URL_DESTINO = "http://localhost:5502/Requerimiento2/"
-const RECURSO = "archivojson.json"
 
 //Estableciendo la conexión con el servidor virtual
 function enviarPeticionAsincrona() {
     let htr1 = new XMLHttpRequest()
-    htr1.open('GET', URL_DESTINO + RECURSO, true)
+    htr1.open('GET', 'archivojson.json', true)
     htr1.send(null)
     htr1.onreadystatechange = function () {
         if (this.readyState == 4) {
