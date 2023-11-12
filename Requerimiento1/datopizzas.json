@@ -1,12 +1,5 @@
 {
   "PIZZA": {
-    "CLIENTE": {
-      "Nombre": "Nombre",
-      "Apellido": "Apellido",
-      "Dirección": "Introduzca calle y portal",       
-      "Teléfono": "Introduzca su número",
-      "Correo electrónico": "Introduzca su email"
-    },
     "TAMANO": [
       {
         "@id": "Pequeña",
@@ -40,6 +33,10 @@
       {
         "@id": "Aceitunas negras",
         "PRECIO": 1.00
+      },
+      {
+        "@id": "Cebolla",
+        "PRECIO": 1.05  
       }
     ]
   }

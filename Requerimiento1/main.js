@@ -1,7 +1,9 @@
 window.onload = function() {
-    btnajax.onclick = enviarPeticionAsincrona;
+    var btnajax = document.getElementById('btnajax');
+    if (btnajax) {
+        btnajax.onclick = enviarPeticionAsincrona;
+    }
 }
-
 //------------------------------------Funciones que involucra a .json------------------------------------------
 function enviarPeticionAsincrona() {
     let htr1 = new XMLHttpRequest()
@@ -13,8 +15,9 @@ function enviarPeticionAsincrona() {
                 procesarRespuesta(this.responseText); // Obtener el valor en XML
             }
             else {
-                alert("ZASCA!");
+                alert("Error al cargar datos: " + this.status + " - " + this.statusText);
             }
+            
         }
     }
 }
