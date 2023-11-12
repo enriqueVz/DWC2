@@ -58,12 +58,38 @@ function enviarPeticionAsincrona() {
 
 //Obtención del array del tamaño de pizza y del array de los ingredientes extra presentes en el .json
 //Se imprime mensaje si efectivamente la conexión se ha establecido con éxito
+var arrayTamanos;
 function procesarRespuesta(jsonDoc) {
     var objetoJson = JSON.parse(jsonDoc);
     //Si ponenos var arrayNovelas = ... no funcionará
     arrayTamanos = objetoJson.PIZZA.TAMANO;
     arrayExtras = objetoJson.PIZZA.EXTRAS;
     div1.innerHTML = "Conexión establecida";
+
+    //Cogemos del .json cada tamaño de pizza y su precio
+    var labelDeRadioTamano =[]; var tdTextContent = [];
+    for (i=0; i<3;  i++) {
+        let radioId ="radioTamano"+i;
+        labelDeRadioTamano[i] = document.querySelector('label[for="'+document.getElementById(radioId).id+'"]');
+        labelDeRadioTamano[i].textContent = arrayTamanos[i]["@id"];
+        let tdId ="tdPrecioTamano"+i;
+        tdTextContent[i] = document.getElementById(tdId);
+        tdTextContent[i].textContent=arrayTamanos[i].PRECIO_BASE+" €";
+    }
+    //Cogemos del .json cada ingrediente extra y su precio
+    var labelDeCheckboxExtra =[]; var tdTextContent = [];
+    for (i=0; i<4;  i++) {
+        let radioId ="checkboxExtra"+i;
+        labelDeCheckboxExtra[i] = document.querySelector('label[for="'+document.getElementById(radioId).id+'"]');
+        labelDeCheckboxExtra[i].textContent = arrayExtras[i]["@id"];
+        let tdId ="tdPrecioExtra"+i;
+        tdTextContent[i] = document.getElementById(tdId);
+        tdTextContent[i].textContent="+ "+arrayExtras[i].PRECIO+" €";
+    }
+    //Y los hacemos visibles en el navegador
+    fieldsetCaracteristicas.style.display = "inline-block";
+    fieldsetCantidad.style.display = "inline-block";
+    divProcesarPedido.style.display = "block";
 }
 
 //Función que hace visible una ventana modal con los datos de todos los tamaños de pizza
@@ -85,7 +111,8 @@ function datosTodosTamanos() {
 //Función que hace visible una ventana modal con los datos del tamaño de pizza seleccionado
 function datosTamano(nombretamano) {
     divModal2.style.display = "block";
-    var tabla1 = "<table><tr><th>Nombre</th><th>Precio (€)</th><th>Diámetro (cm)</th></tr>";
+    let tabla1 = "<table><tr><th>Nombre</th><th>Precio (€)</th><th>Diámetro (cm)</th></tr>";
+    if (nombretamano) {}
     for (let tamano of arrayTamanos) {
         if (tamano["@id"] == nombretamano) {
             tabla1 += "<tr>"+
@@ -95,7 +122,7 @@ function datosTamano(nombretamano) {
             "</tr>";
             tabla1 += "</table>"
             //return div3.innerHTML = tabla1;
-            divModalContent2.innerHTML = tabla1;
+            return divModalContent2.innerHTML = tabla1;
         }
     }
     divModalContent2.innerHTML = "No ha seleccionado ningún tamaño.";
@@ -145,6 +172,6 @@ function calcularPrecio() {
     //document.getElementById('precio').textContent = precioTotalRedondeado;
     //Mostrar el precio total en la página en formato español
     parrafoprecio.textContent = precioTotalRedondeadoEntera+","+precioTotalRedondeadoDecimal+' €';
-    //Hacemos aparecer el div4 que originalmente estaba oculto;
-    div4.style.display = 'block';
+    //Hacemos aparecer el divImporte que originalmente estaba oculto;
+    divImporte.style.display = 'block';
 }

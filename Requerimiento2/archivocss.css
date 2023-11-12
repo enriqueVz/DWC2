@@ -2,17 +2,24 @@ body {
     font-family: Calibri;
 }
 
-table {
-    border:2px solid black;
+#FieldsetDatosDeEnvio {
+    display: inline-block;
 }
 
 td {
-    padding: 5px;
+    padding: 4px;
 }
+
+.negrita {
+    font-weight: bold;
+    font-size: 18px;
+}
+
 #inputnumber1 {
     width: 40px;
 
 }
+
 .modal {
     position: fixed;
     top: 0;
