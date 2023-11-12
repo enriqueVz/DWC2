@@ -31,15 +31,15 @@
       },
       {
         "@id": "Jamón York",
-        "PRECIO": 1.00
+        "PRECIO": 0.95
       },
       {
         "@id": "Champiñones",
-        "PRECIO": 1.00
+        "PRECIO": 1.50
       },
       {
         "@id": "Aceitunas negras",
-        "PRECIO": 1.00
+        "PRECIO": 1.05
       }
     ]
   }
