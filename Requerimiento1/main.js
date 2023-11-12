@@ -1,8 +1,5 @@
 window.onload = function() {
-    var btnajax = document.getElementById('btnajax');
-    if (btnajax) {
-        btnajax.onclick = enviarPeticionAsincrona;
-    }
+    btnajax.onclick = enviarPeticionAsincrona;
 }
 //------------------------------------Funciones que involucra a .json------------------------------------------
 function enviarPeticionAsincrona() {
@@ -15,7 +12,7 @@ function enviarPeticionAsincrona() {
                 procesarRespuesta(this.responseText); // Obtener el valor en XML
             }
             else {
-                alert("Error al cargar datos: " + this.status + " - " + this.statusText);
+                alert("ZASCA!");
             }
             
         }
@@ -47,7 +44,7 @@ function procesarRespuesta(jsonDoc) {
     //Aqui se rellenan los checkboxes
     var stringIngr = "<table>";
     for(i=0; i <arrayExtras.length; i++) {
-        stringIngr += "<tr><td><input type=checkbox></td>"+"<td>"+arrayExtras[i]["@id"]+"</td>"+"<td>"+"(+1 €)"+"</td><tr>" ;
+        stringIngr += "<tr><td><input type=checkbox></td>"+"<td>"+arrayExtras[i]["@id"]+"</td>"+"<td>+"+arrayExtras[i].PRECIO+"€</td><tr>" ;
     }
     stringIngr += "</table>"
     

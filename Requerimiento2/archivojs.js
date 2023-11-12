@@ -76,7 +76,7 @@ function procesarRespuesta(jsonDoc) {
     }
     //Cogemos del .json cada ingrediente extra y su precio
     var labelDeCheckboxExtra =[]; var tdTextContent = [];
-    for (i=0; i<4;  i++) {
+    for (i=0; i<5;  i++) {
         let radioId ="checkboxExtra"+i;
         labelDeCheckboxExtra[i] = document.querySelector('label[for="'+document.getElementById(radioId).id+'"]');
         labelDeCheckboxExtra[i].textContent = arrayExtras[i]["@id"];

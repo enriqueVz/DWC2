@@ -20,15 +20,15 @@
     "EXTRAS": [
       {
         "@id": "Queso",
-        "PRECIO": 1.10
+        "PRECIO": 1.00
       },
       {
         "@id": "Jamón York",
-        "PRECIO": 1.20
+        "PRECIO": 1.00
       },
       {
         "@id": "Champiñones",
-        "PRECIO": 0.90
+        "PRECIO": 1.00
       },
       {
         "@id": "Aceitunas negras",
@@ -36,7 +36,7 @@
       },
       {
         "@id": "Cebolla",
-        "PRECIO": 1.05  
+        "PRECIO": 1.00  
       }
     ]
   }
