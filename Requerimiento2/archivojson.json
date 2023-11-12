@@ -28,13 +28,16 @@
       },
       {
         "@id": "Champiñones",
-        "PRECIO": 0.90
+        "PRECIO": 0.95
       },
       {
         "@id": "Aceitunas negras",
+        "PRECIO": 1.00
+      },
+      {
+        "@id": "Cebolla",
         "PRECIO": 1.00
       }
     ]
   }
 }
-  
